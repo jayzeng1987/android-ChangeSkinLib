@@ -145,7 +145,7 @@ public class SkinManager
 
 
     /**
-     * 搴旂敤鍐呮崲鑲わ紝浼犲叆璧勬簮鍖哄埆鐨勫悗缂�
+     * 应用内换肤，传入资源区别的后缀
      *
      * @param suffix
      */
@@ -189,7 +189,7 @@ public class SkinManager
 
 
     /**
-     * 鏍规嵁suffix閫夋嫨鎻掍欢鍐呮煇濂楃毊鑲わ紝榛樿涓�""
+     * 根据suffix选择插件内某套皮肤，默认为""
      *
      * @param skinPluginPath
      * @param skinPluginPkg
