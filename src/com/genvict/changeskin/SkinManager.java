@@ -60,6 +60,8 @@ public class SkinManager
         String skinPluginPath = mPrefUtils.getPluginPath();
         String skinPluginPkg = mPrefUtils.getPluginPkgName();
         mSuffix = mPrefUtils.getSuffix();
+        
+        System.out.println("Current skin: " + mSuffix);
 
         if (!validPluginParams(skinPluginPath, skinPluginPkg))
             return;
@@ -145,7 +147,7 @@ public class SkinManager
 
 
     /**
-     * 应用内换肤，传入资源区别的后缀
+     * 搴旂敤鍐呮崲鑲わ紝浼犲叆璧勬簮鍖哄埆鐨勫悗缂�
      *
      * @param suffix
      */
@@ -155,6 +157,10 @@ public class SkinManager
         mSuffix = suffix;
         mPrefUtils.putPluginSuffix(suffix);
         notifyChangedListeners();
+    }
+    
+    public String getCurrentSkin(){
+    	return mSuffix;
     }
 
     private void clearPluginInfo()
@@ -185,7 +191,7 @@ public class SkinManager
 
 
     /**
-     * 根据suffix选择插件内某套皮肤，默认为""
+     * 鏍规嵁suffix閫夋嫨鎻掍欢鍐呮煇濂楃毊鑲わ紝榛樿涓�""
      *
      * @param skinPluginPath
      * @param skinPluginPkg
