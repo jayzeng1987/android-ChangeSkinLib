@@ -41,6 +41,19 @@ public class ResourceManager
             return null;
         }
     }
+    
+    public int getResIdByName(String name)
+    {
+        try
+        {
+            name = appendSuffix(name);
+            L.e("name = " + name + " , " + mPluginPackageName);
+            return mResources.getIdentifier(name, DEFTYPE_DRAWABLE, mPluginPackageName);
+        } catch (Resources.NotFoundException e){
+            e.printStackTrace();
+            return -1;
+        }
+    }
 
     public int getColor(String name) throws Resources.NotFoundException
     {
