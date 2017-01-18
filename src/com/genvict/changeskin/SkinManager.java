@@ -60,8 +60,6 @@ public class SkinManager
         String skinPluginPath = mPrefUtils.getPluginPath();
         String skinPluginPkg = mPrefUtils.getPluginPkgName();
         mSuffix = mPrefUtils.getSuffix();
-        
-        System.out.println("Current skin: " + mSuffix);
 
         if (!validPluginParams(skinPluginPath, skinPluginPkg))
             return;
