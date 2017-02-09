@@ -1,5 +1,7 @@
 package com.genvict.changeskin.attr;
 
+import java.lang.reflect.Field;
+
 import com.genvict.changeskin.ResourceManager;
 import com.genvict.changeskin.SkinManager;
 
@@ -7,6 +9,7 @@ import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -64,6 +67,24 @@ public enum SkinAttrType {
 				if (divider == null)
 					return;
 				((LinearLayout) view).setDividerDrawable(divider);
+			}
+		}
+	},
+	TEXTCURSORDRAWABLE("textCursorDrawable") {
+		@Override
+		public void apply(View view, String resName) {
+			if (view instanceof EditText) {
+				int textCursorRes = getResourceManager().getResIdByName(resName);
+				if (textCursorRes <= 0)
+					return;
+				
+				try {//修改光标的颜色（反射）
+				      Field f = TextView.class.getDeclaredField("mCursorDrawableRes");
+				       f.setAccessible(true);
+				       f.set((EditText)view, textCursorRes);
+				} catch (Exception ignored) {
+				   // TODO: handle exception
+				}
 			}
 		}
 	};
