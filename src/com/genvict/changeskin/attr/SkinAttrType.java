@@ -8,6 +8,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -58,6 +59,11 @@ public enum SkinAttrType {
 				if (divider == null)
 					return;
 				((ListView) view).setDivider(divider);
+			} else if (view instanceof LinearLayout) {
+				Drawable divider = getResourceManager().getDrawableByName(resName);
+				if (divider == null)
+					return;
+				((LinearLayout) view).setDividerDrawable(divider);
 			}
 		}
 	};

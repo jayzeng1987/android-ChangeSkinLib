@@ -5,8 +5,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.genvict.changeskin.R;
 import com.genvict.changeskin.constant.SkinConfig;
-import com.zhy.changeskin.R;
 
 import java.util.ArrayList;
 import java.util.List;
